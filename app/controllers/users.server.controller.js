@@ -36,3 +36,13 @@ exports.userByID = function(req, res, next, id) {
         }
     });
 };
+
+exports.update = function(req, res, next) {
+    User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
+        if (err) {
+            return next(err);
+        } else {
+            res.json(user);
+        }
+    });
+};
