@@ -45,4 +45,16 @@ UserSchema.virtual('fullName').get(function () {
 
 UserSchema.set('toJSON', { getters: true, virtuals: true });
 
+// Custome static method
+// usage: User.findOneByUsername('username', function(err, user) {...});
+UserSchema.statics.findOneByUsername = function (username, callback) {
+    this.findOne({ username: new RegExp(username, i) }, callback);
+};
+
+// Custom instance method
+// usage: user.authenticate('password');
+UserSchema.methods.authenticate = function (password) {
+    return this.password === password;
+};
+
 mongoose.model('User', UserSchema);
