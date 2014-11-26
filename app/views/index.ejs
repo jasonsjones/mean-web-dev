@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/site.css">
         <title><%= title %></title>
     </head>
     <body>
-        <% if (userFullName) { %>
-            <h2>Hello <%= userFullName %> </h2>
-            <a href="/signout">Sign out</a>
-        <% } else { %>
-            <a href="/signup">Signup</a>
-            <a href="/signin">Signin</a>
-        <% } %>
-        <img src="img/nodejs_logo.png" alt="node logo">
-        <h1><%= title %></h1>
+        <div class="container">
+            <div class="jumbotron text-center">
+
+                <img src="img/nodejs_logo.png" alt="node logo">
+                <h2><%= title %></h2>
+
+                <% if (userFullName) { %>
+                    <h3>Hello <%= userFullName %> </h3>
+                    <a href="/signout">Sign out</a>
+                <% } else { %>
+                <p>Sign in or Register with:</p>
+                    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
+                    <a href="/signin" class="btn btn-default"><span class="fa fa-user"></span> Signin</a>
+                <% } %>
+            </div>
+        </div>
     </body>
 </html>
