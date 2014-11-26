@@ -3,7 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('mongoose').model('User');
 
 
-module.exports - function () {
+module.exports = function () {
 
     passport.use(new LocalStrategy(function (username, password, done) {
 
@@ -13,7 +13,7 @@ module.exports - function () {
             }
 
             if (!user) {
-                return done(null, false, { message: 'Unkown user' });
+                return done(null, false, { message: 'Unknown user' });
 
             }
 
