@@ -18,15 +18,17 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
                 User.findUniqueUsername(possibleUsername, null, function (availableUsername) {
                     profile.username = availableUsername;
 
-                    user = new User(profile);
+                    var user = new User(profile);
+                    console.log(profile);
 
                     user.save(function (err) {
-                        if (err) {
-                            var message = _this.getErrorMessage(err);
+                         if (err) {
+                        //     var message = _this.getErrorMessage(err);
 
-                            req.flash('error', message);
-                            return res.redirect('/signup');
-                        }
+                        //     req.flash('error', message);
+                        //     return res.redirect('/signup');
+                            throw err;
+                         }
 
                         return done(err, user);
                     });
