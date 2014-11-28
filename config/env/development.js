@@ -4,8 +4,8 @@ module.exports = {
             '@ds033390.mongolab.com:33390/mean-book',
     sessionSecret: 'developmentSessionSecret',
     facebook: {
-        clientID: '827269583980893',
-        clientSecret: '52fd07316069f2e7208f92d38d543750',
+        clientID: process.env.FB_CLIENT_ID,
+        clientSecret: process.env.FB_CLIENT_SECRET,
         callbackURL: 'http://127.0.0.1:3000/oauth/facebook/callback'
     }
 };
