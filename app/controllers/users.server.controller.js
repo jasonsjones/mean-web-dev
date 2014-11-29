@@ -19,7 +19,6 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
                     profile.username = availableUsername;
 
                     var user = new User(profile);
-                    console.log(profile);
 
                     user.save(function (err) {
                          if (err) {

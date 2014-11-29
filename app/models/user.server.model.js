@@ -51,7 +51,14 @@ UserSchema.virtual('fullName').get(function () {
 }).set(function (fullName) {
     var splitName = fullName.split(' ');
     this.firstName = splitName[0] || '';
-    this.lastName = splitName[1] || '';
+
+    // need to account for middle initial
+    // if present, fullName will have length 3
+    if (splitName.length === 3) {
+        this.lastName = splitName[2] || '';
+    } else {
+        this.lastName = splitName[1] || '';
+    }
 });
 
 UserSchema.pre('save', function (next) {

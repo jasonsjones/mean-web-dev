@@ -26,12 +26,23 @@ module.exports = function(app) {
             failureFlash: true
         }));
 
+
     app.get('/oauth/facebook', passport.authenticate('facebook', {
         scope: 'email',
         failureRedirect: '/signin'
     }));
     
     app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
+        failureRedirect: '/signin',
+        successRedirect: '/'
+    }));
+
+
+    app.get('/oauth/twitter', passport.authenticate('twitter', {
+        failureRedirect: '/signin'
+    }));
+    
+    app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
         failureRedirect: '/signin',
         successRedirect: '/'
     }));
