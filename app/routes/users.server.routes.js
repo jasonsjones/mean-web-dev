@@ -47,5 +47,16 @@ module.exports = function(app) {
         successRedirect: '/'
     }));
 
+
+    app.get('/oauth/google', passport.authenticate('google', {
+        scope: ['email', 'profile' ],
+        failureRedirect: '/signin'
+    }));
+    
+    app.get('/oauth/google/callback', passport.authenticate('google', {
+        failureRedirect: '/signin',
+        successRedirect: '/'
+    }));
+
     app.get('/signout', users.signout);
 };

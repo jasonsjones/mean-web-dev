@@ -1,11 +1,11 @@
 {
-  "name": "mean-web-dev",
-  "version": "0.0.1",
+  "name": "MEAN",
+  "version": "0.0.7",
   "homepage": "https://github.com/jasonsjones/mean-web-dev",
   "authors": [
     "Jason Jones <jsjones96@gmail.com>"
   ],
-  "description": "project code from mean-web-dev",
+  "description": "project code from MEAN Web Development",
   "moduleType": [
     "node"
   ],

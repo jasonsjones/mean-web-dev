@@ -14,8 +14,6 @@ module.exports = function () {
     },
 
     function (req, token, tokenSecret, profile, done) {
-        console.log('twitter profile');
-        console.log(profile);
         var providerData = profile._json;
         providerData.token = token;
         providerData.tokenSecret = tokenSecret;
