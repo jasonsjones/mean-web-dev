@@ -18,11 +18,11 @@ module.exports = function(app) {
         .get(users.renderSignup)
         .post(users.signup);
 
-    app.route('/signin')
-        .get(users.renderSignin)
+    app.route('/login')
+        .get(users.renderLogin)
         .post(passport.authenticate('local', {
             successRedirect: '/',
-            failureRedirect: '/signin',
+            failureRedirect: '/login',
             failureFlash: true
         }));
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
         scope: 'email',
         failureRedirect: '/signin'
     }));
-    
+
     app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
         failureRedirect: '/signin',
         successRedirect: '/'
@@ -41,7 +41,7 @@ module.exports = function(app) {
     app.get('/oauth/twitter', passport.authenticate('twitter', {
         failureRedirect: '/signin'
     }));
-    
+
     app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
         failureRedirect: '/signin',
         successRedirect: '/'
@@ -52,7 +52,7 @@ module.exports = function(app) {
         scope: ['email', 'profile' ],
         failureRedirect: '/signin'
     }));
-    
+
     app.get('/oauth/google/callback', passport.authenticate('google', {
         failureRedirect: '/signin',
         successRedirect: '/'

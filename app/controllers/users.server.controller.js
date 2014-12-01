@@ -6,13 +6,13 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
 
         provider: profile.provider,
         providerId: profile.providerId
-        
+
     }, function (err, user) {
        if (err) {
            return done(err);
        } else {
            if (!user) {
-               var possibleUsername = profile.username || 
+               var possibleUsername = profile.username ||
                    ((profile.email) ? profile.email.split('@')[0] : '');
 
                 User.findUniqueUsername(possibleUsername, null, function (availableUsername) {
@@ -35,7 +35,7 @@ exports.saveOAuthUserProfile = function (req, profile, done) {
            } else {
             return done(err, user);
            }
-       } 
+       }
     });
 };
 
@@ -64,10 +64,10 @@ var getErrorMessage = function (err) {
 
 };
 
-exports.renderSignin = function (req, res, next) {
+exports.renderLogin = function (req, res, next) {
     if (!req.user) {
-        res.render('signin', {
-            title: 'Sign-in Form',
+        res.render('login', {
+            title: 'Log-in Form',
             messages: req.flash('error') || req.flash('info')
         });
     } else {

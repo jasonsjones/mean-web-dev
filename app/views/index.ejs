@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:ng="http://angularjs.org">
     <head>
-        <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/site.css">
+        <%- include styles.ejs %>
         <title><%= title %></title>
     </head>
     <body>
@@ -11,14 +9,17 @@
             <div class="jumbotron text-center">
 
                 <img src="img/nodejs_logo.png" alt="node logo">
-                <h2><%= title %></h2>
+                <h1><%= title %></h1>
+                <p class="leading">Code based on the project described in <em>MEAN Web Development</em>
+                 by Amos Q. Haviv</p>
+                 <p class="text-muted">design by Jason Jones</p>
 
                 <% if (user) { %>
                     <a href="/signout" class="btn btn-default"><span class="fa fa-user"></span> Sign out</a>
                 <% } else { %>
                 <p>Sign in or Register with:</p>
-                    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Signup</a>
-                    <a href="/signin" class="btn btn-default"><span class="fa fa-user"></span> Signin</a>
+                    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Sign-up</a>
+                    <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
                     <a href="/oauth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
                     <a href="/oauth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
                     <a href="/oauth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
@@ -30,20 +31,7 @@
             window.user = <%- user || 'null' %>;
         </script>
 
-        <!--Bower installed front-end libraries-->
-        <script type="text/javascript" src="/lib/angular/angular.js"></script>
-        <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+        <%- include scripts.ejs %>
 
-        <!--Angular user module-->
-        <script type="text/javascript" src="/users-module/users.client.module.js"></script>
-        <script type="text/javascript" src="/users-module/services/authentication.client.service.js"></script>
-
-        <!--Angular example module-->
-        <script type="text/javascript" src="/example/example.client.module.js"></script>
-        <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
-        <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
-
-
-        <script type="text/javascript" src="/application.js"></script>
     </body>
 </html>
