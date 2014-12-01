@@ -1,4 +1,3 @@
-angular.module('users', []);
 
 angular.module('users').factory('Authentication', [
     function () {
