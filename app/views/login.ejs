@@ -10,9 +10,11 @@
     <div class="container">
         <div class="col-sm-6 col-sm-offset-3">
             <h1><span class="fa fa-sign-in"></span> Sign In</h1>
-            <% for (var i in messages) { %>
-                <div class="flash"><%= messages[i] %></div>
-            <% } %>
+                <% for (var i in messages) { %>
+                <div class="alert alert-danger">
+                    <div class="flash"><%= messages[i] %></div>
+                </div>
+              <% } %>
 
             <form action="/login" method="post">
                <div class="form-group">
