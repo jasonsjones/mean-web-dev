@@ -12,7 +12,7 @@
                 <h1><%= title %></h1>
                 <p class="leading">Code based on the project described in <em>MEAN Web Development</em>
                  by Amos Q. Haviv</p>
-                 <p class="text-muted">design by Jason Jones</p>
+                 <p class="text-muted">with a little design by Jason Jones</p>
 
                 <% if (user) { %>
                     <a href="/signout" class="btn btn-default"><span class="fa fa-user"></span> Sign out</a>
@@ -25,7 +25,9 @@
                     <a href="/oauth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
                 <% } %>
             </div>
-            <section ng-view></section>
+            <div class="well">
+                <section ng-view></section>
+            </div>
         </div>
         <script type="text/javascript">
             window.user = <%- user || 'null' %>;
