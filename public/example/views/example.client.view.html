@@ -1,12 +1,22 @@
-<div class="row" ng-controller="ExampleController">
-    <div class="col-sm-6 col-sm-offset-3">
-       <div class="form-group">
-           <label>Text 1</label>
-           <input type="text" class="form-control" id="text1" ng-model="name">
-       </div>
-       <div class="form-group">
-           <label>Text 2</label>
-           <input type="text" class="form-control" id="text2" ng-model="name">
-       </div>
-    </div>
+<div class="row">
+  <section ng-controller="ExampleController">
+        <div class="col-sm-6 col-sm-offset-3">
+
+           <div data-ng-show="!authentication.user">
+             <a href="/signup" class="btn btn-default">Sign Up</a>
+             <a href="/login" class="btn btn-default">Log in</a>
+           </div>
+
+           <div data-ng-show="authentication.user">
+             <h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1> 
+             <a href="/signout" class="btn btn-default">Sign out</a>
+           </div>
+
+           <ul>
+             <li><a href="/#!/articles">List Articles</a></li>
+             <li><a href="/#!/articles/create">Create Article</a></li>
+           </ul>
+
+        </div>
+  </section>
 </div>
