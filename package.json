@@ -15,6 +15,7 @@
     "connect-flash": "~0.1.1",
     "passport-facebook": "~1.0.3",
     "passport-twitter": "~1.0.2",
-    "passport-google-oauth": "~0.1.5"
+    "passport-google-oauth": "~0.1.5",
+    "socket.io": "~1.2.1"
   }
 }

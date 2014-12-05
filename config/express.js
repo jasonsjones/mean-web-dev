@@ -1,4 +1,6 @@
 var config = require('./config');
+var http = require('http');
+var socketio = require('socket.io');
 var express = require('express');
 var morgan = require('morgan');
 var compress = require('compression');
@@ -10,6 +12,8 @@ var passport = require('passport');
 
 module.exports = function() {
     var app = express();
+    var server = http.createServer(app);
+    var io = socketio.listen(server);
 
     if (process.env.NODE_ENV === 'development') {
         app.use(morgan('dev'));
@@ -42,5 +46,5 @@ module.exports = function() {
 
     app.use(express.static('./public'));
 
-    return app;
+    return server;
 };
