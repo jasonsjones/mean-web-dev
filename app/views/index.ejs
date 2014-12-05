@@ -6,27 +6,9 @@
     </head>
     <body>
         <div class="container">
-            <div class="jumbotron text-center">
-
-                <img src="img/nodejs_logo.png" alt="node logo">
-                <h1><%= title %></h1>
-                <p class="leading">Code based on the project described in <em>MEAN Web Development</em>
-                 by Amos Q. Haviv</p>
-                 <p class="text-muted">with a little design by Jason Jones</p>
-
-                <% if (user) { %>
-                    <a href="/signout" class="btn btn-default"><span class="fa fa-user"></span> Sign out</a>
-                <% } else { %>
-                <p>Sign in or Register with:</p>
-                    <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Sign-up</a>
-                    <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-                    <a href="/oauth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
-                    <a href="/oauth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a>
-                    <a href="/oauth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
-                <% } %>
-            </div>
             <section ng-view></section>
         </div>
+        
         <script type="text/javascript">
             window.user = <%- user || 'null' %>;
         </script>

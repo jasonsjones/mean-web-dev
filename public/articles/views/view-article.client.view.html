@@ -1,8 +1,8 @@
 <section data-ng-controller="ArticleController" data-ng-init="findOne()">
     <h1 data-ng-bind="article.title"></h1>
     <div data-ng-show="authentication.user._id == article.creator._id">
-        <a href="/#!/articles/{{ article._id }}/edit">edit</a>
-        <a href="#" data-ng-click="delete();">delete</a>
+        <a href="/#!/articles/{{ article._id }}/edit" class="btn btn-warning"><span class="fa fa-edit"></span> Edit</a>
+        <a href="#!" data-ng-click="delete();" class="btn btn-danger"><span class="fa fa-times"></span> Delete</a>
     </div>
     <small>
         <em>Posted on</em>
