@@ -4,7 +4,7 @@
         <li data-ng-repeat="article in articles">
             <a data-ng-href="#!/articles/{{ article._id }}" data-ng-bind="article.title"></a>
             <br>
-            <small data-ng-bind="article.created | data:'medium'"></small>
+            <small data-ng-bind="article.created | date:'mediumDate'"></small>
             <small>/</small>
             <small data-ng-bind="article.creator.fullName"></small>
             <p data-ng-bind="article.content"></p>
