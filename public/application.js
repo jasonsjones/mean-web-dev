@@ -5,7 +5,8 @@ var mainApplicationModule = angular.module(mainApplicationModuleName, [
     'ngRoute',
     'users',
     'example',
-    'articles'
+    'articles',
+    'chat'
     ]);
 
 mainApplicationModule.config(['$locationProvider', function ($locationProvider) {

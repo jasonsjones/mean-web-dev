@@ -3,7 +3,7 @@ module.exports = function (io, socket) {
     io.emit('chatMessage', {
         type: 'status',
         text: 'connected',
-        created: Date.now();
+        created: Date.now(),
         username: socket.request.user.username
     });
 
@@ -19,7 +19,7 @@ module.exports = function (io, socket) {
         io.emit('chatMessage', {
             type: 'status',
             text: 'disconnected',
-            created: Date.now();
+            created: Date.now(),
             username: socket.request.user.username
         });
     });
