@@ -27,6 +27,6 @@ module.exports = function (server, io, mongoStore) {
     });
 
     io.on('connection', function (socket) {
-
+        require('../app/controllers/chat.server.controller')(io, socket);
     });
 };
