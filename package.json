@@ -17,5 +17,9 @@
     "passport-twitter": "~1.0.2",
     "passport-google-oauth": "~0.1.5",
     "socket.io": "~1.2.1"
+  },
+  "devDependencies": {
+    "should": "~4.3.0",
+    "supertest": "~0.15.0"
   }
 }
