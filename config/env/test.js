@@ -1,7 +1,8 @@
 module.exports = {
     // test configuration options
-    db: 'mongodb://' + process.env.TEST_DB_USER + ':' + process.env.TEST_DB_PWD +
-            '@ds063140.mongolab.com:63140/mean-book-test',
+    // db: 'mongodb://' + process.env.TEST_DB_USER + ':' + process.env.TEST_DB_PWD +
+    //         '@ds063140.mongolab.com:63140/mean-book-test',
+    db: 'mongodb://localhost/mean-book-test',
     sessionSecret: 'testSessionSecret',
     viewEngine: 'ejs',
     facebook: {
