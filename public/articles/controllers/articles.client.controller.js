@@ -1,5 +1,5 @@
 angular.module('articles')
-    .controller('ArticleController', [
+    .controller('ArticlesController', [
         '$scope',
         '$routeParams',
         '$location',
