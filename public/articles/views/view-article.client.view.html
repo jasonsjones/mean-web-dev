@@ -1,4 +1,4 @@
-<section data-ng-controller="ArticleController" data-ng-init="findOne()">
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
     <h1 data-ng-bind="article.title"></h1>
     <div data-ng-show="authentication.user._id == article.creator._id">
         <a href="/#!/articles/{{ article._id }}/edit" class="btn btn-warning"><span class="fa fa-edit"></span> Edit</a>
