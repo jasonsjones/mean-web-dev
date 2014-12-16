@@ -46,6 +46,24 @@ module.exports = function (grunt) {
             all: {
                 src: 'public/modules/**/*.css'
             }
+        },
+        watch: {
+            js: {
+                files: ['server.js', 'config/**/*.js', 'app/**/*.js', 'public/js/*.js', 'public/modules/**/*.js'],
+                tasks: ['jshint']
+            },
+            css: {
+                files: 'public/modules/**/*.css',
+                tasks: ['csslint']
+            }
+        },
+        concurrent: {
+            dev: {
+                tasks: ['nodemon', 'watch'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
         }
     });
 
@@ -56,8 +74,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-protractor-runner');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-csslint');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-concurrent');
 
-    grunt.registerTask('default', ['env:dev', 'nodemon']);
+    grunt.registerTask('default', ['env:dev', 'lint', 'concurrent']);
     grunt.registerTask('test', ['env:test', 'mochaTest', 'karma']);
     grunt.registerTask('lint', ['jshint', 'csslint']);
 };
