@@ -37,6 +37,7 @@
     "karma-phantomjs-launcher": "~0.1.4",
     "mocha": "~2.0.1",
     "should": "~4.3.0",
-    "supertest": "~0.15.0"
+    "supertest": "~0.15.0",
+    "grunt-node-inspector": "~0.1.5"
   }
 }
